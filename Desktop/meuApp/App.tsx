@@ -1,22 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  ImageBackground,
+  SafeAreaView,
+} from "react-native";
+
+import backgroundImage from "./assets/img/fundo1.png";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
+    <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-    </View>
+      <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.backgroundImage}>
+        <Text style={styles.title}>CAFÉ E CIA</Text>
+      </ImageBackground>
+    </SafeAreaView>
   );
-
-  
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "white",
   },
 });
