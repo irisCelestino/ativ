@@ -32,22 +32,6 @@ const Contador: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  button: {
-    padding: 10,
-    backgroundColor: 'lightblue',
-    borderRadius: 5,
-    margin: 5,
-  },
-});
+
 
 export default Contador;

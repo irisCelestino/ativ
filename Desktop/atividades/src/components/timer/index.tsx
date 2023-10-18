@@ -1,40 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import {useState,useEffect} from 'react';
-import { SafeAreaView } from 'react-native';
-import { styles } from '../counter/styles';
+import { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  SafeAreaViewComponent,
+} from "react-native";
+import { styles } from "../counter/styles";
+import React from "react";
 
-export default function Timer(){
- const[hora, setHora]=useState(new Date());
- 
- useEffect(() =>{
-const interval=setInterval(()=>{
-setHora(new Date());
+export function Timer() {
+  const [hora, setHora] = useState(new Date());
 
-
-},1000)
-return () => clearInterval(interval); 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setHora(new Date());
+    }, 1000);
+    return () => clearInterval(intervalId);
   }, []);
+
   const resetarHora = () => {
-    const novaHora = new Date();
-    novaHora.setMinutes(novaHora.getMinutes() - 10); 
-    setHora(novaHora);
- };
+    const newHora = new Date();
+    newHora.setMinutes(newHora.getMinutes() - 10);
+    setHora(newHora);
+  };
 
- return(
-<SafeAreaView style={styles.container}>
-<StatusBar/>
-
-
-
-
-
-
-
-</SafeAreaView>
-
-
-
-
- )
-
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar />
+      <View style={styles.relogioConteiner}></View>
+    </SafeAreaView>
+  );
 }

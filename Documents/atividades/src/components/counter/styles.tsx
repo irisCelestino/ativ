@@ -22,4 +22,13 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 10,
   },
+  relogioText:{
+
+    color: '#fff',
+    fontSize:22,
+    fontWeight:'bold'
+  },
+  botaoConteiner:{
+    marginBottom:20,
+  }
 });

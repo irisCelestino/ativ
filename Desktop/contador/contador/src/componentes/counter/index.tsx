@@ -1,24 +1,44 @@
 import { useState } from "react";
-import { Button, SafeAreaView, StatusBar,Text } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+} from "react-native";
+import { styles } from "./styles";
 
-export default function Counter (){
-const[counter, setCounter]= useState(0);
+export default function Counter() {
+  const [counter, setCounter] = useState(0);
 
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar />
 
+      <Text style={styles.text}>Contador :{counter} </Text>
 
-
-return <SafeAreaView>
-<StatusBar/>
-
-<Text>Contador :{counter} </Text>
-<Button title= "Incrementar" onPress={()=>{setCounter(counter+1)
-}}/>
-<Button title= "Decrementar" onPress={()=>{setCounter(counter-1)
-}}/>
-<Button title= "Zerar" onPress={()=>{setCounter(0)
-}}/>
-
-
-</SafeAreaView>
-
+      <TouchableOpacity
+        onPress={() => {
+          setCounter(counter + 1);
+        }}
+        style={styles.button}
+      >
+        <Text>Incrementar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          setCounter(counter - 1);
+        }}
+      >
+        <Text>Decrementar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          setCounter(0);
+        }}
+      >
+        <Text>Resetar</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
 }

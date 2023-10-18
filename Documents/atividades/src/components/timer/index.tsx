@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  View,
-  SafeAreaView,
-  StatusBar,
-} from "react-native";
+import { Button, Text, View, SafeAreaView, StatusBar } from "react-native";
 import { styles } from "../counter/styles";
 
 export default function Timer() {
@@ -25,7 +21,14 @@ export default function Timer() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <View style={styles.relogioConteiner}></View>
+      <View style={styles.relogioConteiner}>
+        <Text style={styles.relogioText}>
+          Hora Atual: {hora.toLocaleDateString()}
+        </Text>
+      </View>
+      <View style={styles.botaoConteiner}>
+        <Button title="Resetar H em 10 min" onPress={resetarHora} />
+      </View>
     </SafeAreaView>
   );
 }
